@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN" "http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+  <package name="userSession" namespace="/user/session" extends="default">
+    <action name="new">
+      <result>/user/session/new.jsp</result>
+    </action>
+    
+    <action name="create" class="actions.user.session.Create">
+      <result type="redirect">/user/list</result>
+      <result name="input">/user/session/new.jsp</result>
+    </action>
+    
+    <action name="delete" class="actions.user.session.Delete">
+      <interceptor-ref name="secureStack"></interceptor-ref>
+    </action>
+  </package>
+</struts>

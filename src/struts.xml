@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN" "http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+  <constant name="struts.devMode" value="true" />
+  
+  <package name="default" abstract="true" extends="struts-default">
+    <interceptors>
+      <interceptor name="authentication" class="interceptors.AuthenticationInterceptor" />
+      
+      <interceptor-stack name="secureStack">
+        <interceptor-ref name="authentication" />
+        <interceptor-ref name="defaultStack" />
+      </interceptor-stack>
+    </interceptors>
+    
+    <global-results>
+      <result name="login">/user/session/new.jsp</result>
+      <result name="error">/error.jsp</result>
+    </global-results>
+    
+    <global-exception-mappings>
+      <exception-mapping exception="java.lang.Exception" result="error" />
+    </global-exception-mappings>
+  </package>
+  
+  <package name="secure" abstract="true" extends="default">
+    <default-interceptor-ref name="secureStack" />
+  </package>
+  
+  <include file="actions/user/session/userSession.xml" />
+  <include file="actions/user/user.xml" />
+</struts>
