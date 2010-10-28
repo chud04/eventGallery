@@ -62,7 +62,6 @@ public final class User {
    */
   public static User findByLogin(String login) {
     return findByAttribute("login", login);
-
   }
 
   /**
