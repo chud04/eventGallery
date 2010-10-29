@@ -4,25 +4,24 @@ import javax.servlet.ServletContext;
 import javax.servlet.ServletContextEvent;
 import javax.servlet.ServletContextListener;
 
+import models.User;
 import models.db.MongoDb;
 
 import com.mongodb.DB;
 import com.mongodb.Mongo;
 
 /**
- * Creates a database connection to a mongodb database.
- *
+ * Creates a database connection to a mongodb database and creates the admin user.
  */
 public class MongoDbConnectionListener implements ServletContextListener {
   /**
    * Default constructor. 
    */
   public MongoDbConnectionListener() {
-    // TODO Auto-generated constructor stub
   }
 
   /**
-   * @see ServletContextListener#contextInitialized(ServletContextEvent)
+   * Loads the database name "dbName" from the context, creates a database connection and an admin user if necessary.
    */
   public void contextInitialized(ServletContextEvent event) {
     ServletContext sc = event.getServletContext();
@@ -31,7 +30,8 @@ public class MongoDbConnectionListener implements ServletContextListener {
     try {
       Mongo m = new Mongo();
       DB db = m.getDB(dbName);
-      MongoDb.setDb(db);
+      MongoDb.setDb(db);      
+      if (User.findByLogin("admin") == null) User.create("Admin", "admin", "secret");
     } catch (Exception e) {
       e.printStackTrace();
     }
@@ -41,6 +41,5 @@ public class MongoDbConnectionListener implements ServletContextListener {
    * @see ServletContextListener#contextDestroyed(ServletContextEvent)
    */
   public void contextDestroyed(ServletContextEvent arg0) {
-    // TODO Auto-generated method stub
   }
 }

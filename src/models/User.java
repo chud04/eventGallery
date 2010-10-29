@@ -6,6 +6,7 @@ import com.mongodb.BasicDBObject;
 import com.mongodb.DBCollection;
 import com.mongodb.DBCursor;
 import com.mongodb.DBObject;
+import com.mongodb.MongoException;
 
 import models.db.MongoDb;
 
@@ -71,6 +72,30 @@ public final class User {
    */
   public static User findById(Integer id) {
     return findByAttribute("id", id);
+  }
+  
+  /**
+   * Saves a new user to the database.
+   * @param name User name
+   * @param login User login string
+   * @param password User password
+   * @return true if the creation was successful otherwise false is returned
+   */
+  public static boolean create(String name, String login, String password) {
+    boolean success = true;
+    BasicDBObject doc = new BasicDBObject();
+    doc.append("name", name);
+    doc.append("login", login);
+    doc.append("password", password);
+    
+    try {
+      dbColl().insert(doc);
+    } catch (MongoException e) {
+      e.printStackTrace();
+      success = false;
+    }
+    
+    return success;
   }
   
   /**
