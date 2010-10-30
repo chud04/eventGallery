@@ -9,17 +9,16 @@ import com.opensymphony.xwork2.interceptor.Interceptor;
 import models.User;
 import models.UserAware;
 
-/*
+/**
  * This intercepter provides authentication for the secure actions of the application.
  * It does two things. First, it checks the session scope map to see if there's user 
- * object present, which indicates that the current user is already logged in. If this
- * object is not present, the intercepter alters the workflow of the request by returning 
+ * id present, which indicates that the current user is already logged in. If this
+ * id is not present, the intercepter alters the workflow of the request by returning 
  * a login control string that causes the request to forward to the login page.
  * 
- * If the user object is present in the session map, then the intercepter injects the user
- * object into the action by calling the setUser method, and then allows the processing of 
- * the request to continue.
- *
+ * If the user id is present in the session map, then the intercepter loads the user
+ * from the database and injects the user object into the action by calling the setUser
+ * method, and then allows the processing of the request to continue.
  */
 public final class AuthenticationInterceptor implements Interceptor {
   private static final long serialVersionUID = 1L;

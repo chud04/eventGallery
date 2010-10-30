@@ -10,27 +10,14 @@ import com.mongodb.DBCursor;
 import com.mongodb.DBObject;
 import com.mongodb.MongoException;
 
-
 /**
  * @author Philipp Ullmann
  * Application user.
  */
 public final class User {
-  /**
-   * Unique identifier
-   */
   private String id;
-  /**
-   * Name
-   */
   private String name;
-  /**
-   * Login string
-   */
   private String login;
-  /**
-   * Login password.
-   */
   private String password;
 
   public User() {}
@@ -144,8 +131,8 @@ public final class User {
     return id;
   }
 
-  /*
-   * Returns the user's name.
+  /**
+   * Returns the name of the user.
    */
   public String toString() {
     return getName();

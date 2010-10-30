@@ -1,7 +1,7 @@
 package models;
 
 /**
- * Simple interface for actions that want have the user object injected.
+ * Actions which implement this interface get the current logged in user object injected.
  */
 public interface UserAware {
   public void setUser(User user);

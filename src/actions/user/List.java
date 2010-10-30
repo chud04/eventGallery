@@ -5,6 +5,10 @@ import java.util.ArrayList;
 
 import com.opensymphony.xwork2.ActionSupport;
 
+/**
+ * @author Philipp Ullmann
+ * Lists all users.
+ */
 public final class List extends ActionSupport {
   private static final long serialVersionUID = 1L;
   private ArrayList<models.User> users;

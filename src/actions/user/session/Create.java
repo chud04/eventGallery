@@ -9,6 +9,11 @@ import org.apache.struts2.interceptor.SessionAware;
 
 import com.opensymphony.xwork2.ActionSupport;
 
+/**
+ * @author Philipp Ullmann
+ * Authenticates an user by login and password string.
+ * If authentication is successful the user id is stored in the session object.
+ */
 public final class Create extends ActionSupport implements SessionAware {
   private static final long serialVersionUID = 1L;
   private String login;
@@ -47,6 +52,9 @@ public final class Create extends ActionSupport implements SessionAware {
     this.session = session;
   }
   
+  /**
+   * Validates presence of login and password string.
+   */
   public void validate() {
     if (getPassword().length() == 0) addFieldError("password", "Password is required");
     if (getLogin().length() == 0) addFieldError("login", "Username is required");
