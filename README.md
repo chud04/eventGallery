@@ -26,18 +26,18 @@ The aim of this project is to create an easy to use web based multi-user photo g
 3. Create a new dynamic project
 4. Copy the project files under git in the corresponding folders
 5. [Download](https://jstl.dev.java.net/download.html) JavaServer Pages Standard Tag Library (JSTL) and copy the following files into the project *WebContent/lib* folder:
- * jstl-api-1.2.jar
- * jstl-impl-1.2.jar
+    * jstl-api-1.2.jar
+    * jstl-impl-1.2.jar
 6. [Download](http://struts.apache.org/download.cgi) the Struts 2 framework and copy the following files into the project *WebContent/lib* folder:
- * commons-fileupload-1.2.1.jar
- * commons-io-1.3.2.jar
- * commons-logging-1.0.4.jar
- * commons-logging-api-1.1.jar
- * freemarker-2.3.16.jar
- * javassist-3.7.ga.jar
- * ognl-3.0.jar
- * struts2-core-2.2.1.jar
- * xwork-core-2.2.1.jar
+    * commons-fileupload-1.2.1.jar
+    * commons-io-1.3.2.jar
+    * commons-logging-1.0.4.jar
+    * commons-logging-api-1.1.jar
+    * freemarker-2.3.16.jar
+    * javassist-3.7.ga.jar
+    * ognl-3.0.jar
+    * struts2-core-2.2.1.jar
+    * xwork-core-2.2.1.jar
 
 ## Note
 
