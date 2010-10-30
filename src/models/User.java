@@ -10,7 +10,6 @@ import com.mongodb.DBCursor;
 import com.mongodb.DBObject;
 import com.mongodb.MongoException;
 
-import models.db.MongoDb;
 
 /**
  * @author Philipp Ullmann
@@ -118,7 +117,7 @@ public final class User {
    * @return User database collection
    */
   private static DBCollection dbColl() {
-    return MongoDb.getDb().getCollection("users");
+    return Database.getDb().getCollection("users");
   }
   
   /**

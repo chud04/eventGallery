@@ -4,8 +4,8 @@ import javax.servlet.ServletContext;
 import javax.servlet.ServletContextEvent;
 import javax.servlet.ServletContextListener;
 
+import models.Database;
 import models.User;
-import models.db.MongoDb;
 
 import com.mongodb.DB;
 import com.mongodb.Mongo;
@@ -30,7 +30,7 @@ public class MongoDbConnectionListener implements ServletContextListener {
     try {
       Mongo m = new Mongo();
       DB db = m.getDB(dbName);
-      MongoDb.setDb(db);      
+      Database.setDb(db);      
       if (User.findByLogin("admin") == null) User.create("Admin", "admin", "secret");
     } catch (Exception e) {
       e.printStackTrace();

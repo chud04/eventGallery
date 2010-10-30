@@ -1,4 +1,4 @@
-package models.db;
+package models;
 
 import com.mongodb.DB;
 
@@ -6,7 +6,7 @@ import com.mongodb.DB;
  * @author Philipp Ullmann
  * Stores a mongo db database connection.
  */
-public final class MongoDb {
+public final class Database {
   private static DB db = null;
   
   /**
