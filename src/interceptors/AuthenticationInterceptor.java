@@ -32,7 +32,7 @@ public final class AuthenticationInterceptor implements Interceptor {
 
   public String intercept(ActionInvocation actionInvocation) throws Exception {
     Map<String, Object> session = actionInvocation.getInvocationContext().getSession();
-    Integer userId = (Integer) session.get("userId");
+    String userId = (String) session.get("userId");
     
     if (userId == null) {
       return Action.LOGIN;

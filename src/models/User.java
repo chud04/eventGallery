@@ -2,6 +2,8 @@ package models;
 
 import java.util.ArrayList;
 
+import org.bson.types.ObjectId;
+
 import com.mongodb.BasicDBObject;
 import com.mongodb.DBCollection;
 import com.mongodb.DBCursor;
@@ -18,7 +20,7 @@ public final class User {
   /**
    * Unique identifier
    */
-  private Integer id;
+  private String id;
   /**
    * Name
    */
@@ -39,7 +41,7 @@ public final class User {
    * @param doc DBObject
    */
   private User(DBObject doc) {
-    id = (Integer) doc.get("id");
+    id = doc.get("_id").toString();
     name = (String) doc.get("name");
     login = (String) doc.get("login");
     password = (String) doc.get("password");
@@ -70,8 +72,8 @@ public final class User {
    * @param id User id
    * @return User or null
    */
-  public static User findById(Integer id) {
-    return findByAttribute("id", id);
+  public static User findById(String id) {
+    return findByAttribute("id", new ObjectId(id));
   }
   
   /**
@@ -139,7 +141,7 @@ public final class User {
    * Returns the user id.
    * @return User id
    */
-  public Integer getId() {
+  public String getId() {
     return id;
   }
 

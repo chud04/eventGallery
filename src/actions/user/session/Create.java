@@ -19,7 +19,6 @@ public final class Create extends ActionSupport implements SessionAware {
     User user = User.findByLogin(getLogin());
     
     if (user != null && user.authenticate(getPassword())) {
-      System.out.println(user.getId());
       session.put("userId", user.getId());
     } else {
       return INPUT;
