@@ -1,12 +1,16 @@
-<%@ include file="/layouts/header.jsp" %>
+<%@ include file="/jspHead.jsp" %>
+<!DOCTYPE HTML>
 
 <html>
-  <jsp:include page="/layouts/head.jsp">
-    <jsp:param value="User list" name="title" />
-  </jsp:include>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>User list</title>
+  </head>
   
   <body>
-    <%@ include file="/layouts/logout.jsp" %>
+    <p style="text-align:right">
+      <a href="<s:url namespace='/user/session' action='delete' />">Logout</a>
+    </p>
   
     <h1>User list</h1>
 

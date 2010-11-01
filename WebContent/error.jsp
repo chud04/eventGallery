@@ -1,9 +1,11 @@
-<%@ include file="/layouts/header.jsp" %>
+<%@ include file="/jspHead.jsp" %>
+<!DOCTYPE HTML>
 
 <html>
-  <jsp:include page="/layouts/head.jsp">
-    <jsp:param value="User login" name="title" />
-  </jsp:include>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>Error page</title>
+  </head>
 
   <body>
     <h4>This application has malfunctioned.</h4>
