@@ -18,7 +18,7 @@
           <h2>Login Box</h2>
           
           <div class="content">
-            <s:form namespace="/user/session" action="create">
+            <s:form namespace="/user/session" action="create" cssClass="login">
               <s:textfield name="login" label="Login" labelSeparator="" cssClass="text_field"></s:textfield>
               <s:password name="password" label="Password" labelSeparator="" cssClass="text_field"></s:password>
               <s:submit cssClass="button" value="Sign in"></s:submit>

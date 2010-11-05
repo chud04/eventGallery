@@ -3,6 +3,8 @@
 
 <struts>
   <constant name="struts.devMode" value="true" />
+  <constant name="struts.ui.theme" value="philipp" />
+  <constant name="struts.ui.templateDir" value="template" />
   
   <package name="default" abstract="true" extends="struts-default">
     <interceptors>
