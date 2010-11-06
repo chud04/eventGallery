@@ -108,6 +108,14 @@ public final class User {
   }
   
   /**
+   * Returns the user id.
+   * @return User id
+   */
+  public String getId() {
+    return id;
+  }
+  
+  /**
    * Returns the user name.
    * @return Name
    */
@@ -124,11 +132,11 @@ public final class User {
   }
   
   /**
-   * Returns the user id.
-   * @return User id
+   * Returns the password.
+   * @return Password
    */
-  public String getId() {
-    return id;
+  public String getPassword() {
+    return password;
   }
 
   /**
