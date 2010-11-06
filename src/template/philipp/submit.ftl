@@ -1,2 +1,28 @@
-<div class="group navform wat-cf"><div class="right"><#rt/>
-<#include "/${parameters.templateDir}/simple/submit.ftl" />
+<div class="group navform wat-cf"><div class="right"><input type="submit"<#rt/>
+<#if parameters.id??>
+ id="${parameters.id?html}"<#rt/>
+</#if>
+<#if parameters.name??>
+ name="${parameters.name?html}"<#rt/>
+</#if>
+<#if parameters.nameValue??>
+ value="<@s.property value="parameters.nameValue"/>"<#rt/>
+</#if>
+<#if parameters.disabled?default(false)>
+ disabled="disabled"<#rt/>
+</#if>
+ class="button<#rt/>
+<#if parameters.cssClass??>
+ ${parameters.cssClass?html}<#rt/>
+</#if>
+"<#rt/>
+<#if parameters.cssStyle??>
+ style="${parameters.cssStyle?html}"<#rt/>
+</#if>
+<#if parameters.title??>
+ title="${parameters.title?html}"<#rt/>
+</#if>
+<#if parameters.tabindex??>
+ tabindex="${parameters.tabindex?html}"<#rt/>
+</#if>
+ />

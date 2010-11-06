@@ -19,9 +19,9 @@
           
           <div class="content">
             <s:form namespace="/user/session" action="create" cssClass="login">
-              <s:textfield name="login" label="Login" labelSeparator="" cssClass="text_field"></s:textfield>
-              <s:password name="password" label="Password" labelSeparator="" cssClass="text_field"></s:password>
-              <s:submit cssClass="button" value="Sign in"></s:submit>
+              <s:textfield name="login" label="Login"></s:textfield>
+              <s:password name="password" label="Password"></s:password>
+              <s:submit value="Sign in"></s:submit>
             </s:form>
           </div>
         </div>
