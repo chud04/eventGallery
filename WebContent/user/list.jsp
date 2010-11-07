@@ -15,13 +15,13 @@
         
         <div id="user-navigation">
           <ul class="wat-cf">
-            <li><a href="<s:url namespace='/user/session' action='delete' />">Logout</a></li>
+            <li><a href="<s:url namespace='/user/session' action='delete' />" class="logout">Logout</a></li>
           </ul>
         </div>
         
         <div id="main-navigation">
           <ul class="wat-cf">
-            <li><a href="<s:url namespace='/user' action='list' />">Users</a></li>
+            <li class="first active"><a href="<s:url namespace='/user' action='list' />">Users</a></li>
           </ul>
         </div>
       </div>

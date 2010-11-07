@@ -1,0 +1,9 @@
+form.form input.textFieldError, form.form input.textFieldError:focus, form.form input.textFieldError:hover {
+  border-color: red;
+}
+
+form.form input.textFieldError:hover {
+  -webkit-box-shadow: red 0 0 3px;
+  -moz-box-shadow: red 0 0 3px;
+  box-shadow: 0 0 3px red;
+}
