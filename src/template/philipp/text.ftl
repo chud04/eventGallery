@@ -20,11 +20,10 @@
  id="${parameters.id?html}"<#rt/>
 </#if>
  class="text_field<#rt/>
-<#assign hasFieldErrors = parameters.name?? && fieldErrors?? && fieldErrors[parameters.name]??/>
 <#if parameters.cssClass??>
  ${parameters.cssClass?html}<#rt/>
 </#if>
-<#if hasFieldErrors>
+<#if parameters.name?? && fieldErrors?? && fieldErrors[parameters.name]??>
  textFieldError<#rt/>
 </#if>
 "<#rt/>
@@ -34,4 +33,5 @@
 <#if parameters.title??>
  title="${parameters.title?html}"<#rt/>
 </#if>
- /></div></div><#rt/>
+ /><#rt/>
+<#include "/${parameters.templateDir}/philipp/controlfooter.ftl" />

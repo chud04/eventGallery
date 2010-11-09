@@ -56,7 +56,7 @@ public final class Create extends ActionSupport implements SessionAware {
    * Validates presence of login and password string.
    */
   public void validate() {
-    if (getPassword().length() == 0) addFieldError("password", "Password is required");
-    if (getLogin().length() == 0) addFieldError("login", "Username is required");
+    if (getPassword().length() == 0) addFieldError("password", "is required");
+    if (getLogin().length() == 0) addFieldError("login", "is required");
   }
 }

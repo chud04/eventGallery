@@ -31,4 +31,5 @@
 <#if parameters.title??>
  title="${parameters.title?html}"<#rt/>
 </#if>
- /></div></div><#rt/>
+ /><#rt/>
+<#include "/${parameters.templateDir}/philipp/controlfooter.ftl" />
