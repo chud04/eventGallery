@@ -59,7 +59,7 @@ public final class User {
    * @return User or null
    */
   public static User findById(String id) {
-    return findByAttribute("id", new ObjectId(id));
+    return findByAttribute("_id", new ObjectId(id));
   }
   
   /**

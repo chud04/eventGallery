@@ -49,9 +49,8 @@
                     <td><s:property value="login" /></td>
                     <td><s:property value="password" /></td>
                     <td class="last">
-                      <a href="">Show</a> |
-                      <a href="">Edit</a> |
-                      <a href="">Delete</a>
+                      <a href="<s:url namespace='/user' action='edit'><s:param name="id" value="id" /></s:url>"><img src="<s:url value='/images/icons/pencil.png' />" /></a> &nbsp;&nbsp;
+                      <a href="<s:url namespace='/user' action='list' />"><img src="<s:url value='/images/icons/cross.png' />" /></a>
                     </td>
                   </tr>
                   </s:iterator>
@@ -59,7 +58,7 @@
                 
                 <div class="actions-bar wat-cf">
                   <div class="actions">
-                    <a href="">New</a>
+                    <a href="">Create a new user</a>
                   </div>
                 </div>
               </div>

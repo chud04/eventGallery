@@ -6,5 +6,9 @@
     <action name="list" class="actions.user.List">
       <result>/user/list.jsp</result>
     </action>
+    
+    <action name="edit" class="actions.user.Edit">
+      <result>/user/edit.jsp</result>
+    </action>
   </package>
 </struts>

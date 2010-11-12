@@ -1,6 +1,5 @@
 package actions.user.session;
 
-import java.sql.SQLException;
 import java.util.Map;
 
 import models.User;
@@ -20,7 +19,7 @@ public final class Create extends ActionSupport implements SessionAware {
   private String password;
   private Map<String, Object> session;
 
-  public String execute() throws SQLException {
+  public String execute() {
     User user = User.findByLogin(getLogin());
     
     if (user != null && user.authenticate(getPassword())) {
