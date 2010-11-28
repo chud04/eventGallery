@@ -49,7 +49,7 @@
                     <td><s:property value="login" /></td>
                     <td><s:property value="password" /></td>
                     <td class="last">
-                      <a href="<s:url namespace='/user' action='edit'><s:param name="id" value="id" /></s:url>"><img src="<s:url value='/images/icons/pencil.png' />" /></a> &nbsp;&nbsp;
+                      <a href="<s:url namespace='/user' action='edit'><s:param name="id" value="id"></s:param></s:url>"><img src="<s:url value='/images/icons/pencil.png' />" /></a> &nbsp;&nbsp;
                       <a href="<s:url namespace='/user' action='list' />"><img src="<s:url value='/images/icons/cross.png' />" /></a>
                     </td>
                   </tr>

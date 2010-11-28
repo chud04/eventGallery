@@ -9,7 +9,12 @@
 <#if parameters.id??>
  for="${parameters.id?html}"<#rt/>
 </#if>
- class="label">${parameters.label?html}</label><#rt/>
+ class="label"><#rt/>
+${parameters.label?html}<#rt/>
+<#if parameters.required?default(false)>
+<span class="required">*</span><#rt/>
+</#if>
+</label><#rt/>
 </#if>
 <#if hasFieldErrors>
 <span class="error"> ${fieldErrors[parameters.name][0]?html}</span></div><#rt/>

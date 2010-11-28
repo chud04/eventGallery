@@ -32,7 +32,6 @@ public final class Edit extends ActionSupport {
     return user;
   }
   
-
   /**
    * @param id the id to set
    */

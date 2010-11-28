@@ -1,7 +1,3 @@
-<div class="group navform wat-cf"><#rt/>
-<#if parameters.labelposition?default("left") == 'right'>
-<div class="right"><#rt/>
-</#if>
 <input type="submit"<#rt/>
 <#if parameters.id??>
  id="${parameters.id?html}"<#rt/>

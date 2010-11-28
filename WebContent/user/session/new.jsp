@@ -18,7 +18,12 @@
             <s:form namespace="/user/session" action="create" cssClass="login">
               <s:textfield name="login" label="Login" labelposition="beside"></s:textfield>
               <s:password name="password" label="Password" labelposition="beside"></s:password>
-              <s:submit value="Sign in" labelposition="right"></s:submit>
+              
+              <div class="group navform wat-cf">
+                <div class="right">
+                  <s:submit value="Sign in"></s:submit>
+                </div>
+              </div>
             </s:form>
           </div>
         </div>
