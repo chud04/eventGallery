@@ -23,6 +23,18 @@ public final class User {
   public User() {}
   
   /**
+   * Sets the name, login and password attributes.
+   * @param name
+   * @param login
+   * @param password
+   */
+  public User(String name, String login, String password) {
+    this.name = name;
+    this.login = login;
+    this.password = password;
+  }
+  
+  /**
    * Sets the user attributes from the given DBObject doc.
    * @param doc DBObject
    */
@@ -107,36 +119,35 @@ public final class User {
     return Database.getDb().getCollection("users");
   }
   
-  /**
-   * Returns the user id.
-   * @return User id
-   */
   public String getId() {
     return id;
   }
   
-  /**
-   * Returns the user name.
-   * @return Name
-   */
   public String getName() {
     return name;
   }
 
-  /**
-   * Returns the login string.
-   * @return Login string
-   */
+  public void setName(String name) {
+    this.name = name;
+  }
+  
+
+
+
   public String getLogin() {
     return login;
   }
   
-  /**
-   * Returns the password.
-   * @return Password
-   */
+  public void setLogin(String login) {
+    this.login = login;
+  }
+
   public String getPassword() {
     return password;
+  }
+  
+  public void setPassword(String password) {
+    this.password = password;
   }
 
   /**
@@ -153,5 +164,32 @@ public final class User {
    */
   public boolean authenticate(String password) {
     return this.password.equals(password);
+  }
+  
+  /**
+   * Persist self to the database.
+   */
+  public boolean save() {
+    boolean success = true;
+    
+    try {
+      dbColl().update(new BasicDBObject("_id", id), toDBObject());
+    } catch (MongoException e) {
+      e.printStackTrace();
+      success = false;
+    }
+    
+    return success;
+  }
+  
+  /**
+   * @return A BasicDBObject, which can be stored in the database.
+   */
+  private BasicDBObject toDBObject() {
+    BasicDBObject doc = new BasicDBObject();
+    doc.append("name", name);
+    doc.append("login", login);
+    doc.append("password", password);
+    return doc;
   }
 }

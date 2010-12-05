@@ -10,5 +10,13 @@
     <action name="edit" class="actions.user.Edit">
       <result>/user/edit.jsp</result>
     </action>
+    
+    <action name="update" class="actions.user.Update">
+      <interceptor-ref name="params" />
+      <interceptor-ref name="prepare" />
+      <interceptor-ref name="basicStack" />
+      <result type="redirect">/user/list</result>
+      <result name="input">/user/edit.jsp</result>
+    </action>
   </package>
 </struts>
