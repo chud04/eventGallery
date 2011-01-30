@@ -17,4 +17,8 @@
     <property name="mongo" ref="mongo" />
     <property name="name" value="${db.name}" />
   </bean>
+  
+  <bean id="userDAO" class="at.ullmann.philipp.eventGallery.mongodao.UserDAO">
+    <constructor-arg ref="db" />
+  </bean>
 </beans>
